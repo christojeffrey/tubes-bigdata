@@ -50,64 +50,64 @@ for filename in filenames:
                 DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
                 print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
     # gridoto_news
-    # elif files_starting_filename == 'gridoto_news':
-    #     SOCIAL_MEDIA = 'gridoto_news'
-    #     typenames = data['GraphImages']
-    #     for typename in typenames:
-    #         DATE = typename['taken_at_timestamp']
-    #         # PARSE 1644900422 TO 2021-03-01
-    #         DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
-    #         print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
-    #         for data in typename["comments"]["data"]:
-    #             DATE = data['created_at']
-    #             # PARSE 1644900422 TO 2021-03-01
-    #             DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
-    #             print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
-    # # facebook_post
-    # elif files_starting_filename == 'facebook_post':
-    #     SOCIAL_MEDIA = 'facebook_post'
-    #     for datum in data:
-    #         for comments in datum['comments']['data']:
-    #             DATE = comments['created_time']
-    #             # PARSE 2021-03-01T04:00:00+0000 TO 2021-03-01
-    #             DATE = DATE.split('T')[0]
-    #             print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
-    # # instagram_comment
-    # elif files_starting_filename == 'instagram_comment':
-    #     SOCIAL_MEDIA = 'instagram_comment'
-    #     for datum in data:
-    #         DATE = int(datum['created_time'])
-    #         # PARSE 1644900422 TO 2021-03-01
-    #         DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
-    #         print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
+    elif files_starting_filename == 'gridoto_news':
+        SOCIAL_MEDIA = 'gridoto_news'
+        typenames = data['GraphImages']
+        for typename in typenames:
+            DATE = typename['taken_at_timestamp']
+            # PARSE 1644900422 TO 2021-03-01
+            DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
+            print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
+            for data in typename["comments"]["data"]:
+                DATE = data['created_at']
+                # PARSE 1644900422 TO 2021-03-01
+                DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
+                print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
+    # facebook_post
+    elif files_starting_filename == 'facebook_post':
+        SOCIAL_MEDIA = 'facebook_post'
+        for datum in data:
+            for comments in datum['comments']['data']:
+                DATE = comments['created_time']
+                # PARSE 2021-03-01T04:00:00+0000 TO 2021-03-01
+                DATE = DATE.split('T')[0]
+                print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
+    # instagram_comment
+    elif files_starting_filename == 'instagram_comment':
+        SOCIAL_MEDIA = 'instagram_comment'
+        for datum in data:
+            DATE = int(datum['created_time'])
+            # PARSE 1644900422 TO 2021-03-01
+            DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
+            print(SOCIAL_MEDIA + '\t' + DATE + '\t' + '1')
     # instagram_media
-    # elif files_starting_filename == 'instagram_media':
-    #     SOCIAL_MEDIA = 'instagram_media'
-    #     for datum in data:
-    #         DATE = int(datum['created_time'])
-    #         # PARSE 1644900422 TO 2021-03-01
-    #         DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
-    #         COUNT = str(1 + datum["comment"]["count"])
-    #         print(SOCIAL_MEDIA + '\t' + DATE + '\t' + COUNT)
+    elif files_starting_filename == 'instagram_media':
+        SOCIAL_MEDIA = 'instagram_media'
+        for datum in data:
+            DATE = int(datum['created_time'])
+            # PARSE 1644900422 TO 2021-03-01
+            DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
+            COUNT = str(1 + datum["comment"]["count"])
+            print(SOCIAL_MEDIA + '\t' + DATE + '\t' + COUNT)
     # instagram_post
-    # elif files_starting_filename == 'instagram_post':
-    #     SOCIAL_MEDIA = 'instagram_post'
-    #     for datum in data:
-    #         DATE = int(datum['created_time'])
-    #         # PARSE 1644900422 TO 2021-03-01
-    #         DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
-    #         COUNT =str(1 + datum["comment"]["count"])
-    #         print(SOCIAL_MEDIA + '\t' + DATE + '\t' + COUNT)
+    elif files_starting_filename == 'instagram_post':
+        SOCIAL_MEDIA = 'instagram_post'
+        for datum in data:
+            DATE = int(datum['created_time'])
+            # PARSE 1644900422 TO 2021-03-01
+            DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
+            COUNT =str(1 + datum["comment"]["count"])
+            print(SOCIAL_MEDIA + '\t' + DATE + '\t' + COUNT)
 
     # instagram_status
-    # elif files_starting_filename == 'instagram_status':
-    #     SOCIAL_MEDIA = 'instagram_status'
-    #     for datum in data:
-    #         DATE = int(datum['created_time'])
-    #         # PARSE 1644900422 TO 2021-03-01
-    #         DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
-    #         COUNT = str(1 + datum["comment"]["count"])
-    #         print(SOCIAL_MEDIA + '\t' + DATE + '\t' + COUNT)
+    elif files_starting_filename == 'instagram_status':
+        SOCIAL_MEDIA = 'instagram_status'
+        for datum in data:
+            DATE = int(datum['created_time'])
+            # PARSE 1644900422 TO 2021-03-01
+            DATE = datetime.datetime.fromtimestamp(DATE).strftime('%Y-%m-%d')
+            COUNT = str(1 + datum["comment"]["count"])
+            print(SOCIAL_MEDIA + '\t' + DATE + '\t' + COUNT)
     # myxl
     elif files_starting_filename == 'myxl':
         SOCIAL_MEDIA = 'myxl'
