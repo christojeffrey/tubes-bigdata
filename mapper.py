@@ -1,6 +1,9 @@
+import sys
+sys.path.insert(0, 'osanddatetime.mod')
 import datetime
 import os
 import json
+
 # anaktester_go(error), byu.id, gridoto_news, facebook_post, instagram_comment, instagram_media, instagram_post, instagram_status, myxl, telkomsel, twitter_status, youtube_comment, youtube_video
 
 starting_filenames = ['anaktester_go(error)', 'byu.id', 'gridoto_news', 'facebook_post', 'instagram_comment', 'instagram_media', 'instagram_post', 'instagram_status', 'myxl', 'telkomsel', 'twitter_status', 'youtube_comment', 'youtube_video']
